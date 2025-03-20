@@ -1,0 +1,17 @@
+{
+    "name": "karo_ej/php-authorization",
+    "autoload": {
+        "psr-4": {
+            "KaroEj\\PhpAuthorization\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "g-i-kala",
+            "email": "5star@wp.pl"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
