@@ -2,7 +2,7 @@
     "name": "karo_ej/php-authorization",
     "autoload": {
         "psr-4": {
-            "KaroEj\\PhpAuthorization\\": "src/"
+            "KaroEj\\PhpAuthorization\\": "app/"
         }
     },
     "authors": [
@@ -13,5 +13,8 @@
     ],
     "require": {
         "vlucas/phpdotenv": "^5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^12.0"
     }
 }
