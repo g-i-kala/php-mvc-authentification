@@ -2,7 +2,8 @@
     "name": "karo_ej/php-authorization",
     "autoload": {
         "psr-4": {
-            "KaroEj\\PhpAuthorization\\": "app/"
+            "App\\": "app/",
+            "App\\Config\\": "config/"
         }
     },
     "authors": [
