@@ -4,22 +4,24 @@ use App\Database;
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
-if ($uri === '/') {
-    require_once __DIR__ . '/../app/views/layout.php'; 
-    exit();
-} elseif ($uri === '/login') {
-    require_once __DIR__ . '/../app/views/login.php'; 
-    exit();
-} elseif ($uri === '/register') {
-    require_once __DIR__ . '/../app/views/register.php'; 
-    exit();
-} elseif ($uri === '/dashboard') {
-    require_once __DIR__ . '/../app/views/dashboard.php'; 
-    exit();
-} else {
-    abort(404);
-}
+$routes = [
+    '/' => '/../app/views/layout.php',
+    '/login' => '/../app/views/login.php',
+    '/register' => '/../app/views/register.php',
+    '/dashboard' => '/../app/views/dashboard.php',
+    '/logout' => '/../app/views/logout.php'
+];
 
+routeToController($uri, $routes);
+
+
+function routeToController($uri, $routes) {
+    if (array_key_exists($uri, $routes)) {
+        require_once __DIR__ . $routes[$uri];
+    } else {
+        abort();
+    }
+}
 
 function abort($code = 404) {
     http_response_code($code);
