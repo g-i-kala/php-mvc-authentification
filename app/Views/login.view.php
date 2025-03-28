@@ -1,5 +1,5 @@
 <?php
-$title = "@Auth Login";
+$heading = "Login";
 ob_start();
 ?>  
   

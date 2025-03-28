@@ -1,5 +1,6 @@
 <?php
-$title = "@Auth Register";
+$heading = "Register";
+
 ob_start();
 ?>  
 <div class="page__container flex flex-col justify-center items-center">

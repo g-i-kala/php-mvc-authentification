@@ -4,23 +4,17 @@
 //     exit();
 // }
 
-$heading = "404 Page Not Found";
 ob_start();
 
 ?>
 <div>
     <div class="header__wrapper mx-auto py-8">
-        <h1 class="font-bold">Sorry.</h1>
+        <h1 class="font-bold">About</h1>
+     
     </div>
-
-    <div class="dashboard__content">
-        Page not found.
-    </div>
-
-
 </div>
 
 <?php
 $content = ob_get_clean();
-include 'layout.php';
+include 'layout.view.php';
 ?>

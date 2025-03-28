@@ -4,7 +4,7 @@
 //     exit();
 // }
 
-$title = "@Auth Dashboard";
+$heading = "Dashboard";
 ob_start();
 
 ?>
@@ -22,5 +22,5 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-include 'layout.php';
+include 'layout.view.php';
 ?>
