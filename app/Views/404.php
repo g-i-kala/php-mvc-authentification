@@ -3,17 +3,17 @@
 //     header("Location: login.php");
 //     exit();
 // }
-
+$heading = '';
 ob_start();
 
 ?>
 <div>
     <div class="header__wrapper mx-auto py-8">
-        <h1 class="font-bold">Welcome! </h1>
+        <h1 class="font-bold">Sorry.</h1>
     </div>
 
     <div class="dashboard__content">
-        #dajse
+        Page not found.
     </div>
 
 

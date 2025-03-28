@@ -1,11 +1,12 @@
 <?php
+session_start();
 
 use App\Database;
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $routes = [
-    '/' => '/../app/views/layout.view.php',
+    '/' => '/../app/controllers/index.php',
     '/about' => '/../app/controllers/about.php',
     '/contact' => '/../app/controllers/contact.php',
     '/login' => '/../app/views/login.view.php',
@@ -26,7 +27,19 @@ function routeToController($uri, $routes) {
 }
 
 function abort($code = 404) {
-    http_response_code($code);
-    require_once __DIR__ . "/../app/views/{$code}.php";
+    http_response_code($code); 
+
+    $viewPath = __DIR__ . "/../app/views/{$code}.php";
+   
+    if (file_exists($viewPath)) {
+        require_once $viewPath; 
+    } else {
+        require_once __DIR__ . '/../app/views/500.php'; 
+    }
+
     exit();
+}
+
+function isUrl($value) {
+    return $_SERVER['REQUEST_URI'] === $value;
 }
