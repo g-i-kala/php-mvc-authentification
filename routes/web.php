@@ -5,11 +5,11 @@ use App\Database;
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $routes = [
-    '/' => '/../app/views/layout.php',
-    '/login' => '/../app/views/login.php',
-    '/register' => '/../app/views/register.php',
-    '/dashboard' => '/../app/views/dashboard.php',
-    '/logout' => '/../app/views/logout.php'
+    '/' => '/../app/views/layout.view.php',
+    '/login' => '/../app/views/login.view.php',
+    '/register' => '/../app/views/register.view.php',
+    '/dashboard' => '/../app/views/dashboard.view.php',
+    '/logout' => '/../app/views/logout.view.php'
 ];
 
 routeToController($uri, $routes);
