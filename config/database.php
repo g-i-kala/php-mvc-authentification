@@ -16,21 +16,27 @@ class Database {
     private $dbName;
     private $dbUser;
     private $dbPassword;
-    private $charset = 'utf8mb4';
+    private $charset;
     public $conn;
 
     public function __construct() {
+
         $this->dbHost = $_ENV['DB_HOST'];
         $this->dbName = $_ENV['DB_NAME']; 
         $this->dbUser = $_ENV['DB_USER'];
         $this->dbPassword = $_ENV['DB_PASS'];
-    }
+        $this->charset = 'utf8mb4';
+    
+        $dsn = "mysql:dbname={$this->dbName};host={$this->dbHost};charset={$this->charset}";
+        
+        $options = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
 
-    public function connect() {
-        $this->conn = null;
         try {
-            $this->conn = new PDO('mysql:dbname=' . $this->dbName . ';host=' . $this->dbHost, $this->dbUser, $this->dbPassword);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);  
+            $this->conn = new PDO($dsn, $this->dbUser, $this->dbPassword,$options);  
 
         } catch (PDOException $e) {
             echo "Connection failed. Error: " . $e->getMessage();
@@ -38,6 +44,8 @@ class Database {
             http_response_code(500);
             exit;
         }
+    }
+    public function connect(){
         return $this->conn;
     }
 }

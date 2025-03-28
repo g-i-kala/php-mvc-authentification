@@ -17,6 +17,12 @@ if ($uri === '/') {
     require_once __DIR__ . '/../app/views/dashboard.php'; 
     exit();
 } else {
-    http_response_code(404);
-    echo "404 Not Found";
+    abort(404);
+}
+
+
+function abort($code = 404) {
+    http_response_code($code);
+    require_once __DIR__ . "/../app/views/{$code}.php";
+    exit();
 }
