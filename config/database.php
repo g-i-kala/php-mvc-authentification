@@ -48,6 +48,10 @@ class Database {
     public function connect(){
         return $this->conn;
     }
+
+    public function query($query){
+        return $this->conn->prepare($query);
+    }
 }
 
 
