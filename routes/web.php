@@ -9,6 +9,7 @@ $routes = [
     '/' => '/../app/controllers/index.php',
     '/about' => '/../app/controllers/about.php',
     '/contact' => '/../app/controllers/contact.php',
+    '/notes' => '/../app/controllers/notes.php',
     '/login' => '/../app/views/login.view.php',
     '/register' => '/../app/views/register.view.php',
     '/dashboard' => '/../app/views/dashboard.view.php',
@@ -42,4 +43,11 @@ function abort($code = 404) {
 
 function isUrl($value) {
     return $_SERVER['REQUEST_URI'] === $value;
+}
+
+function dd($variable) {
+    echo '<pre>'; // For better formatting
+    var_dump($variable);
+    echo '</pre>';
+    die(); // Terminate the script
 }
