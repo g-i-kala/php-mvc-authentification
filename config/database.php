@@ -17,7 +17,7 @@ class Database {
     private $dbUser;
     private $dbPassword;
     private $charset;
-    public $conn;
+    public $connection;
 
     public function __construct() {
 
@@ -36,7 +36,7 @@ class Database {
         ];
 
         try {
-            $this->conn = new PDO($dsn, $this->dbUser, $this->dbPassword,$options);  
+            $this->connection = new PDO($dsn, $this->dbUser, $this->dbPassword,$options);  
 
         } catch (PDOException $e) {
             echo "Connection failed. Error: " . $e->getMessage();
@@ -45,12 +45,15 @@ class Database {
             exit;
         }
     }
+
     public function connect(){
-        return $this->conn;
+        return $this->connection;
     }
 
     public function query($query){
-        return $this->conn->prepare($query);
+        $stmt = $this->connection->prepare($query);
+        $stmt->execute();
+        return $stmt;
     }
 }
 

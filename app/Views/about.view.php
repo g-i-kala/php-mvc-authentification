@@ -7,11 +7,8 @@
 ob_start();
 
 ?>
-<div>
-    <div class="header__wrapper mx-auto py-8">
-        <h1 class="font-bold">About</h1>
-     
-    </div>
+<div class="mx-auto max-w-7xl py-6 sm-px-6 lg:px-8">
+   
 </div>
 
 <?php
