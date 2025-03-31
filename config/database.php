@@ -50,9 +50,9 @@ class Database {
         return $this->connection;
     }
 
-    public function query($query){
+    public function query($query, $params=[]){
         $stmt = $this->connection->prepare($query);
-        $stmt->execute();
+        $stmt->execute($params);
         return $stmt;
     }
 }

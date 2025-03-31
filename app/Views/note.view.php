@@ -16,6 +16,9 @@ ob_start();
         <?= $note['content'] ?>
     </div>
      
+    <div class="my-4">
+        <a href="/notes" class=" text-blue-400 hover:text-blue-700">Back to Notes</a>
+    </div>
 </div>
 
 <?php
