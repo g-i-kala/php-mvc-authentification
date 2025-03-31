@@ -9,11 +9,13 @@ ob_start();
 ?>
 <div class="mx-auto max-w-7xl py-6 sm-px-6 lg:px-8">
    
-     <?php
-    foreach($notes as $note) {
-        echo "<li> {$note['content']} </li>";
-    };
-    ?>     
+     <?php foreach($notes as $note) : ?>
+        <a href="/note?id=<?= $note['id'] ?>" class="link size-fit self-center my-4  py-1 text-blue-400 hover:text-blue-700 ">
+            <li>
+                <?= $note['content'] ?>
+            </li>
+        </a>
+    <?php endforeach; ?>     
 
 </div>
 

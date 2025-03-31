@@ -3,17 +3,19 @@
 //     header("Location: login.php");
 //     exit();
 // }
-$heading = '';
+
 ob_start();
 
 ?>
 <div class="mx-auto max-w-7xl py-6 sm-px-6 lg:px-8">
-
-    <div class="dashboard__content">
-        Page not found.
+    <div class="text-sm text-right"> 
+        <?= $note['created_at'] ?>
     </div>
 
-
+    <div class="text-left"> 
+        <?= $note['content'] ?>
+    </div>
+     
 </div>
 
 <?php

@@ -5,7 +5,7 @@
     <?php require('partials/header.php'); ?>
 
 
-    <div class="mx-auto flex-1">
+    <div class="mx-auto w-full flex-1">
         <main>
             <?= $content ?? '' ?>
         </main>

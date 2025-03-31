@@ -10,6 +10,7 @@ $routes = [
     '/about' => '/../app/controllers/about.php',
     '/contact' => '/../app/controllers/contact.php',
     '/notes' => '/../app/controllers/notes.php',
+    '/note' => '/../app/controllers/note.php',
     '/login' => '/../app/views/login.view.php',
     '/register' => '/../app/views/register.view.php',
     '/dashboard' => '/../app/views/dashboard.view.php',
