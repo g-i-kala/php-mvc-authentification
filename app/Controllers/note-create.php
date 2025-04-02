@@ -1,6 +1,7 @@
 <?php
 
 use App\Config\Database;
+use App\Config\Validator;
 
 $db = new Database;
 
@@ -10,19 +11,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
 
-    if (strlen($_POST['content']) === 0) {
-        $errors['content'] = "Content is required.";
+    if (! Validator::string($_POST['title'], 1, 250)) {
+        $errors['title'] = "Title of not more than 250 charakters is required.";
     }
 
-    if (strlen($_POST['content']) > 5000) {
-        $errors['content'] = "Body can not be more than 3500 characters.";
+    if (! $validator->string($_POST['content'], 1, 5000)) {
+        $errors['content'] = "Content of not more than 5000 charakters is required.";
     }
-     
-    $db->query("INSERT INTO notes(title, content, user_id) VALUES (:title, :content, :user_id)", [
-        'title' => $_POST['title'],
-        'content' => $_POST['content'],
-        'user_id' => 1,
-    ]);
+    
+    if (empty($errors)) {
+        $db->query("INSERT INTO notes(title, content, user_id) VALUES (:title, :content, :user_id)", [
+            'title' => $_POST['title'],
+            'content' => $_POST['content'],
+            'user_id' => 1,
+        ]);
+    };
+    
 }
 
 require __DIR__ . "/../views/note-create.view.php";
