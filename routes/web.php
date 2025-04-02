@@ -1,41 +1,14 @@
 <?php
-session_start();
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-$routes = [
+return [
     '/' => '/../app/controllers/index.php',
     '/about' => '/../app/controllers/about.php',
     '/contact' => '/../app/controllers/contact.php',
     '/notes' => '/../app/controllers/notes.php',
     '/note' => '/../app/controllers/note.php',
+    '/notes/create' => '/../app/controllers/note-create.php',
     '/login' => '/../app/views/login.view.php',
     '/register' => '/../app/views/register.view.php',
     '/dashboard' => '/../app/views/dashboard.view.php',
     '/logout' => '/../app/views/logout.view.php'
 ];
-
-routeToController($uri, $routes);
-
-
-function routeToController($uri, $routes) {
-    if (array_key_exists($uri, $routes)) {
-        require_once __DIR__ . $routes[$uri];
-    } else {
-        abort();
-    }
-}
-
-function abort($code = 404) {
-    http_response_code($code); 
-
-    $viewPath = __DIR__ . "/../app/views/{$code}.php";
-   
-    if (file_exists($viewPath)) {
-        require_once $viewPath; 
-    } else {
-        require_once __DIR__ . '/../app/views/500.php'; 
-    }
-
-    exit();
-}

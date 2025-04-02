@@ -57,7 +57,7 @@ class Database {
         return $this;
     }
 
-    public function findAll() {
+    public function get() {
         return $this->stmt->fetchAll();
     }
 

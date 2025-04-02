@@ -6,7 +6,7 @@ $db = new Database;
 
 $heading = "My Notes";
 
-$notes = $db->query("select * from notes where user_id = 1")->findAll();
+$notes = $db->query("select * from notes where user_id = 1")->get();
 
 require __DIR__ . "/../views/notes.view.php";
 
