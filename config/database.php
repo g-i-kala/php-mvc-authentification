@@ -18,6 +18,7 @@ class Database {
     private $dbPassword;
     private $charset;
     public $connection;
+    public $stmt;
 
     public function __construct() {
 
@@ -51,9 +52,26 @@ class Database {
     }
 
     public function query($query, $params=[]){
-        $stmt = $this->connection->prepare($query);
-        $stmt->execute($params);
-        return $stmt;
+        $this->stmt = $this->connection->prepare($query);
+        $this->stmt->execute($params);
+        return $this;
+    }
+
+    public function findAll() {
+        return $this->stmt->fetchAll();
+    }
+
+    public function find() {
+        return $this->stmt->fetch();
+    }
+
+    public function findOrFail() {
+        $result = $this->find();
+        if(! $result) {
+            abort();
+        }
+
+        return $result;
     }
 }
 

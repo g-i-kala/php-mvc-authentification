@@ -4,16 +4,12 @@ use App\Config\Database;
 
 $db = new Database;
 
-$note = $db->query("select * from notes where id = :id",['id' => $_GET['id']])->fetch();
+$note = $db->query("select * from notes where id = :id",['id' => $_GET['id']])->findOrFail ();
 
 $heading = $note['title'];
+$currentUserId = 1;
 
-if(! $note) {
-    abort();
-}
+authorize($note['user_id'] === $currentUserId);
 
-if ($note['user_id'] !== 1) {
-    abort(403);
-}
 
 require __DIR__ . "/../views/note.view.php";

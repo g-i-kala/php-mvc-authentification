@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-use App\Database;
-
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 $routes = [
@@ -40,15 +38,4 @@ function abort($code = 404) {
     }
 
     exit();
-}
-
-function isUrl($value) {
-    return $_SERVER['REQUEST_URI'] === $value;
-}
-
-function dd($variable) {
-    echo '<pre>'; // For better formatting
-    var_dump($variable);
-    echo '</pre>';
-    die(); // Terminate the script
 }

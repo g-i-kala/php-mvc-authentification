@@ -3,7 +3,7 @@
 //     header("Location: login.php");
 //     exit();
 // }
-$heading = '';
+$heading = 'Not Found';
 ob_start();
 
 ?>

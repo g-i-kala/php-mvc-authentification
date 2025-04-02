@@ -3,7 +3,7 @@
 //     header("Location: login.php");
 //     exit();
 // }
-$heading = '';
+$heading = 'Server Error';
 ob_start();
 
 ?>
