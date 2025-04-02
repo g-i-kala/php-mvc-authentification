@@ -12,7 +12,7 @@ ob_start();
      <?php foreach($notes as $note) : ?>
         <a href="/note?id=<?= $note['id'] ?>" class="link size-fit self-center my-4  py-1 text-blue-400 hover:text-blue-700">
             <li>
-                <?= $note['content'] ?>
+                <?= htmlspecialchars($note['content']) ?>
             </li>
         </a>
     <?php endforeach; ?>     

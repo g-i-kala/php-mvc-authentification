@@ -13,7 +13,7 @@ ob_start();
     </div>
 
     <div class="text-left"> 
-        <?= $note['content'] ?>
+        <?= htmlspecialchars($note['content']) ?>
     </div>
      
     <div class="my-4">
