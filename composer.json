@@ -3,10 +3,10 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "App\\Config\\": "config/"
+            "App\\Config\\": "core/"
         },
         "files": [
-            "config/functions.php"
+            "core/functions.php"
         ]
     },
     "authors": [
