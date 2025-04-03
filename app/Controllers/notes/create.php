@@ -1,7 +1,7 @@
 <?php
 
-use App\Core\Database;
-use App\Core\Validator;
+use Core\Database;
+use Core\Validator;
 
 $db = new Database;
 

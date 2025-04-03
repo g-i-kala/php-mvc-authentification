@@ -706,16 +706,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "12.1.0",
+            "version": "12.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "d331a5ced3d9a2b917baa9841b2211e72f9e780d"
+                "reference": "0ce76cf0940abbc31525420b7b8d174656c6675d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/d331a5ced3d9a2b917baa9841b2211e72f9e780d",
-                "reference": "d331a5ced3d9a2b917baa9841b2211e72f9e780d",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/0ce76cf0940abbc31525420b7b8d174656c6675d",
+                "reference": "0ce76cf0940abbc31525420b7b8d174656c6675d",
                 "shasum": ""
             },
             "require": {
@@ -771,7 +771,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.1.0"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/12.1.1"
             },
             "funding": [
                 {
@@ -779,7 +779,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-17T13:56:07+00:00"
+            "time": "2025-04-03T03:41:27+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1028,16 +1028,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.0.9",
+            "version": "12.0.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "7835bb4276780e0bbb385ce0a777b839e03096db"
+                "reference": "6075843014de23bcd6992842d69ca99d25d6a433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/7835bb4276780e0bbb385ce0a777b839e03096db",
-                "reference": "7835bb4276780e0bbb385ce0a777b839e03096db",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6075843014de23bcd6992842d69ca99d25d6a433",
+                "reference": "6075843014de23bcd6992842d69ca99d25d6a433",
                 "shasum": ""
             },
             "require": {
@@ -1105,7 +1105,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.0.9"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.0.10"
             },
             "funding": [
                 {
@@ -1121,7 +1121,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-03-19T13:47:33+00:00"
+            "time": "2025-03-23T16:03:59+00:00"
         },
         {
             "name": "sebastian/cli-parser",

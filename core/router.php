@@ -1,6 +1,6 @@
 <?php
 
-$routes = require __DIR__ . '/web.php';
+$routes = require __DIR__ . '/../routes/web.php';
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
