@@ -25,6 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'content' => $_POST['content'],
             'user_id' => 1,
         ]);
+
+        header("Location: /notes");
     };
     
 }

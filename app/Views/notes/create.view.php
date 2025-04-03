@@ -10,7 +10,6 @@ ob_start();
 <div class="mx-auto max-w-7xl py-6 sm-px-6 lg:px-8">
     
     <form method="POST">
-    
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div class="sm:col-span-4">
                 <label for="title" class="block text-sm/6 font-medium text-gray-900">Title</label>
@@ -50,16 +49,11 @@ ob_start();
                 </div>
             </div>
             <div class="mt-6 flex items-center justify-end gap-x-6">
-                <button type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</button>
+                <a href="/notes" type="button" class="text-sm/6 font-semibold text-gray-900">Cancel</a>
                 <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
             </div>
         </div>
-      
-        
-
     </form>
-
-
 </div>
 
 <?php
