@@ -15,7 +15,10 @@ ob_start();
     <div class="text-left"> 
         <?= htmlspecialchars($note['content']) ?>
     </div>
-     
+    <form method="POST" class="mt-6">
+        <input type="hidden" name="note_id" value="<?= htmlspecialchars($note['id']) ?>"> 
+        <button class="text-sm text-red-500 hover:cursor-pointer">Delete</button>
+    </form>
     <div class="my-4">
         <a href="/notes" class=" text-blue-400 hover:text-blue-700">Back to Notes</a>
     </div>
