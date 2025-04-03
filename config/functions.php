@@ -22,3 +22,9 @@ function authorize($condition, $status = Response::FORBIDDEN) {
 function base_path($path) {
     return BASE_PATH . $path;
 }
+
+function view($viewName, $attributes =[]) {
+    extract($attributes);
+    require base_path("app/views/" . $viewName);
+}
+

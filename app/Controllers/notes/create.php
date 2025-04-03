@@ -5,11 +5,11 @@ use App\Config\Validator;
 
 $db = new Database;
 
-$heading = "New Note";
+$errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $errors = [];
+   
 
     if (! Validator::string($_POST['title'], 1, 250)) {
         $errors['title'] = "Title of not more than 250 charakters is required.";
@@ -29,5 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 }
 
-require __DIR__ . "/../../views/notes/create.view.php";
-
+view('/notes/create.view.php',[
+    'heading' => 'New Note',
+    'errors'  => $errors,
+]);
