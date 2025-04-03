@@ -64,5 +64,5 @@ ob_start();
 
 <?php
 $content = ob_get_clean();
-include 'layout.view.php';
+include __DIR__ . '/../layout.view.php';
 ?>

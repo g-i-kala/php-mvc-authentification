@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors['title'] = "Title of not more than 250 charakters is required.";
     }
 
-    if (! $validator->string($_POST['content'], 1, 5000)) {
+    if (! Validator::string($_POST['content'], 1, 5000)) {
         $errors['content'] = "Content of not more than 5000 charakters is required.";
     }
     
@@ -29,5 +29,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 }
 
-require __DIR__ . "/../views/note-create.view.php";
+require __DIR__ . "/../../views/notes/create.view.php";
 

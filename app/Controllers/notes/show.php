@@ -12,4 +12,4 @@ $currentUserId = 1;
 authorize($note['user_id'] === $currentUserId);
 
 
-require __DIR__ . "/../views/note.view.php";
+require __DIR__ . "/../../views/notes/show.view.php";
