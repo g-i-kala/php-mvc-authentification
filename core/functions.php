@@ -1,6 +1,6 @@
 <?php
 
-use App\Config\Response;
+use App\Core\Response;
 
 function isUrl($value) {
     return $_SERVER['REQUEST_URI'] === $value;

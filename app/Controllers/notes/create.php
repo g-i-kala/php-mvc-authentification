@@ -1,15 +1,13 @@
 <?php
 
-use App\Config\Database;
-use App\Config\Validator;
+use App\Core\Database;
+use App\Core\Validator;
 
 $db = new Database;
 
 $errors = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-   
 
     if (! Validator::string($_POST['title'], 1, 250)) {
         $errors['title'] = "Title of not more than 250 charakters is required.";

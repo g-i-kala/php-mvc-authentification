@@ -1,5 +1,5 @@
 <?php
-namespace App\Config;
+namespace App\Core;
 
 use Dotenv\Dotenv;
 use PDO;

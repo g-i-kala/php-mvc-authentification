@@ -1,6 +1,6 @@
 <?php
 
-use App\Config\Database;
+use App\Core\Database;
 
 $db = new Database;
 
