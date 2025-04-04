@@ -51,7 +51,7 @@ class Router {
         $this->abort();
     }
 
-    private function abort($code = 404) {
+    public function abort($code = 404) {
         http_response_code($code); 
     
         $viewPath = base_path("app/views/{$code}.php");

@@ -1,5 +1,6 @@
 <?php
 
+use Core\Router;
 use Core\Response;
 
 function isUrl($value) {
@@ -7,29 +8,15 @@ function isUrl($value) {
 }
 
 function dd($variable) {
-    echo '<pre>'; // For better formatting
+    echo '<pre>'; 
     var_dump($variable);
     echo '</pre>';
-    die(); // Terminate the script
+    die(); 
 }
 
-function abort($code = 404) {
-    http_response_code($code); 
-
-    $viewPath = base_path("app/views/{$code}.php");
-    
-    if (file_exists($viewPath)) {
-        require_once $viewPath; 
-    } else {
-        require_once base_path('app/views/500.php'); 
-    }
-
-    exit();
-}
-
-function authorize($condition, $status = Response::FORBIDDEN) {
+function authorize($condition, $status = Response::FORBIDDEN, Router $router) {
     if(! $condition) {
-        abort($status);
+        $router->abort($status);
     }
 }
 
