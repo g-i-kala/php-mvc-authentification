@@ -1,18 +1,15 @@
 <?php
 
-$router->get('/','app/controllers/index.php');
-$router->get('/about','../app/controllers/about.php');
+$router->get('/', 'app/controllers/index.php');
+$router->get('/about', 'app/controllers/about.php');
+$router->get('/contact', 'app/controllers/contact.php');
 
+$router->get('/notes', 'app/controllers/notes/index.php');
+$router->get('/note', 'app/controllers/notes/show.php');
+$router->get('/notes/create', 'app/controllers/notes/create.php');
+$router->delete('/note', 'app/controllers/notes/destroy.php');
 
-// return [
-//     '/' => '/../app/controllers/index.php',
-//     '/about' => '/../app/controllers/about.php',
-//     '/contact' => '/../app/controllers/contact.php',
-//     '/notes' => '/../app/controllers/notes/index.php',
-//     '/note' => '/../app/controllers/notes/show.php',
-//     '/notes/create' => '/../app/controllers/notes/create.php',
-//     '/login' => '/../app/views/login.view.php',
-//     '/register' => '/../app/views/register.view.php',
-//     '/dashboard' => '/../app/views/dashboard.view.php',
-//     '/logout' => '/../app/views/logout.view.php'
-// ];
+$router->get('/login', 'app/views/login.view.php');
+$router->get('/register', 'app/views/register.view.php');
+$router->get('/dashboard', 'app/views/dashboard.view.php');
+$router->get('/logout', 'app/views/logout.view.php');
