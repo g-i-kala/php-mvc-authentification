@@ -16,6 +16,7 @@ ob_start();
         <?= htmlspecialchars($note['content']) ?>
     </div>
     <form method="POST" class="mt-6">
+        <input type="hidden" name="_method" value="DELETE">
         <input type="hidden" name="note_id" value="<?= htmlspecialchars($note['id']) ?>"> 
         <button class="text-sm text-red-500 hover:cursor-pointer">Delete</button>
     </form>

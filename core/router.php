@@ -1,29 +1,80 @@
 <?php
+namespace Core;
 
-$routes = require __DIR__ . '/../routes/web.php';
+class Router {
+    protected $routes = [];
 
-$uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-
-function routeToController($uri, $routes) {
-    if (array_key_exists($uri, $routes)) {
-        require_once __DIR__ . $routes[$uri];
-    } else {
-        abort();
-    }
-}
-
-function abort($code = 404) {
-    http_response_code($code); 
-
-    $viewPath = __DIR__ . "/../app/views/{$code}.php";
-   
-    if (file_exists($viewPath)) {
-        require_once $viewPath; 
-    } else {
-        require_once __DIR__ . '/../app/views/500.php'; 
+    public function get($uri, $controller) 
+    {
+        $this->routes[] = [
+            'uri'           => $uri,
+            'controller'    => $controller,
+            'method'        => 'GET'
+        ];
+        //dd($this->routes);
     }
 
-    exit();
-}
+    public function post($uri, $controller) 
+    {
+        $this->routes[] = [
+            'uri'           => $uri,
+            'controller'    => $controller,
+            'method'        => 'POST'
+        ];
+    }
 
-routeToController($uri, $routes);
+    public function delete($uri, $controller) 
+    {
+        $this->routes[] = [
+            'uri'           => $uri,
+            'controller'    => $controller,
+            'method'        => 'DELETE'
+        ];
+    }
+
+    public function patch($uri, $controller) 
+    {
+        $this->routes[] = [
+            'uri'           => $uri,
+            'controller'    => $controller,
+            'method'        => 'PATCH'
+        ];
+    }
+
+    public function put($uri, $controller) 
+    {
+        $this->routes[] = [
+            'uri'           => $uri,
+            'controller'    => $controller,
+            'method'        => 'PUT'
+        ];
+    }
+
+    public function route($uri, $method) 
+    {
+        foreach($this->routes as $route){
+    
+            if($route['uri'] === $uri && $route['method'] === strtoupper($method)) {
+                
+                return require_once base_path($route['controller']);
+            } 
+        }
+
+        $this->abort();
+    }
+
+    public function abort($code = 404) {
+        http_response_code($code); 
+    
+        $viewPath = base_path("app/views/{$code}.php");
+        
+        if (file_exists($viewPath)) {
+            require_once $viewPath; 
+        } else {
+            require_once base_path('app/views/500.php'); 
+        }
+    
+        exit();
+    }
+
+}
