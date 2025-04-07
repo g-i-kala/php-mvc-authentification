@@ -14,9 +14,23 @@ function dd($variable) {
     die(); 
 }
 
-function authorize($condition, $status = Response::FORBIDDEN, Router $router) {
+function abort($code = 404) {
+    http_response_code($code); 
+
+    $viewPath = base_path("app/views/{$code}.php");
+    
+    if (file_exists($viewPath)) {
+        require_once $viewPath; 
+    } else {
+        require_once base_path('app/views/500.php'); 
+    }
+
+    exit();
+}
+
+function authorize($condition, $status = Response::FORBIDDEN) {
     if(! $condition) {
-        $router->abort($status);
+        abort($status);
     }
 }
 
