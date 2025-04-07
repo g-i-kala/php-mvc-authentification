@@ -9,7 +9,7 @@ ob_start();
 ?>
 <div class="mx-auto max-w-7xl py-6 sm-px-6 lg:px-8">
     
-    <form method="POST">
+    <form method="POST" action="/notes">
         <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div class="sm:col-span-4">
                 <label for="title" class="block text-sm/6 font-medium text-gray-900">Title</label>
